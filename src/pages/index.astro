@@ -1,17 +1,17 @@
 ---
 import Starfield from "@components/starfield.astro";
+import Hero from "@components/hero.astro";
+import Nav from "@components/nav.astro";
 ---
 <html>
-    <head></head>
+    <head>
+        <meta charset="UTF-8">
+    </head>
     <body>
         <div>
             <Starfield />
-            <div class="relative flex flex-row h-full text-white content-center text-right justify-around font-extrabold text-6xl">
-                Hello
-                <br /> My name is
-                <br /> Gabriel Leclerc
-                <h1>asdf</h1>
-            </div>
+            <Hero />
+            <Nav />
         </div>
     </body>
 </html>

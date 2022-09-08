@@ -1,0 +1,41 @@
+---
+import Navicon from "./navicon.astro"
+
+const dotSize = "4"
+---
+<style>
+    #nav-about {
+        position: relative;
+        top: 10vh;
+        left: 13vw;
+    }
+    #nav-projects {
+        position: relative;
+        top: 20vh;
+        left: 60vw;
+    }
+    #nav-readings {
+        position: relative;
+        top: 65vh;
+        left: 15vw;
+    }
+    #nav-posts {
+        position: relative;
+        top: 70vh;
+        left: 70vw;
+    }
+    ul {
+        display: inline-block;
+    }
+</style>
+<div>
+    <nav class="absolute inset-0 h-full">
+        <ul>
+            <li id='nav-about'><Navicon size={dotSize} url="/about">About</Navicon></li>
+            <li id='nav-projects'><Navicon size={dotSize} url="/projects">Projects</Navicon></li>
+            <li id='nav-readings'><Navicon size={dotSize} url="/readings">Readings</Navicon></li>
+            <li id='nav-posts'><Navicon size={dotSize} url="/posts">Posts</Navicon></li>
+        </ul>
+    </nav>
+</div>
+  
