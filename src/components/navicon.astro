@@ -14,7 +14,7 @@ const { size, url } = Astro.props;
         border-radius: 20px;
         padding: 5px 0;
         bottom: -5px;
-        margin-left: -56px;
+        margin-left: -50px;
         border: 2px double transparent;
         background-image: linear-gradient(rgb(13, 14, 33), rgb(13, 14, 33)), radial-gradient(circle at left top, rgb(1, 110, 218), rgb(217, 0, 192));
         background-origin: border-box;
@@ -26,7 +26,7 @@ const { size, url } = Astro.props;
 
         /* Fade in transition */
         opacity: 0;
-        transition: opacity 1s;
+        transition: opacity 0.5s;
     }
     .dot:hover .tooltiptext {
         visibility: visible;
@@ -34,18 +34,18 @@ const { size, url } = Astro.props;
     }
     .tooltiptext:hover { 
         transition: all 0.3s ease;
-        box-shadow: rgba(255, 255, 255, 0.525) 0px 0px 20px 0px;
         visibility: visible
+        /* box-shadow: rgba(255, 255, 255, 0.525) 0px 0px 20px 0px; */
     }
 
 </style>
 <div class="dot">
     <!-- Draw the white dot -->
     <svg width={size} height={size} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <filter id="gaussianBlur">
+        <!-- <filter id="gaussianBlur">
             <feGaussianBlur in="SourceGraphic" stdDeviation="5"/>
-        </filter>
-        <circle cx="50" cy="50" r="50" fill="white" filter="url(#gaussianBlur)" />
+        </filter> -->
+        <circle cx="50" cy="50" r="10" fill="white" /> /* filter="url(#gaussianBlur)" */
     </svg>
     <a href={url}>
         <span class="tooltiptext">
