@@ -1,7 +1,7 @@
 ---
 import Navicon from "./navicon.astro"
 
-const dotSize = "4"
+const dotSize = "20"
 ---
 <style>
     #nav-about {
@@ -12,17 +12,29 @@ const dotSize = "4"
     #nav-projects {
         position: relative;
         top: 20vh;
-        left: 60vw;
+        left: 53vw;
     }
     #nav-readings {
         position: relative;
         top: 65vh;
-        left: 15vw;
+        left: 38vw;
     }
     #nav-posts {
         position: relative;
         top: 70vh;
         left: 70vw;
+    }
+    #nav-contact {
+        position: relative;
+        top: 43vh;
+        left: 85vw;
+    }
+    #nav-github {
+        position: absolute;
+        top: 1vh;
+        left: 95vw;
+        height: 20px;
+        width: 20px;
     }
     ul {
         display: inline-block;
@@ -35,6 +47,12 @@ const dotSize = "4"
             <li id='nav-projects'><Navicon size={dotSize} url="/projects">Projects</Navicon></li>
             <li id='nav-readings'><Navicon size={dotSize} url="/readings">Readings</Navicon></li>
             <li id='nav-posts'><Navicon size={dotSize} url="/posts">Posts</Navicon></li>
+            <li id='nav-contact'><Navicon size={dotSize} url="/contact">Contact</Navicon></li>
+            <li id='nav-github'>
+                <a href="https://github.com/PandaGab" target="_blank">
+                    <img src="/assets/GitHub-Mark-Light-64px.png">
+                </a>
+            </li>
         </ul>
     </nav>
 </div>
