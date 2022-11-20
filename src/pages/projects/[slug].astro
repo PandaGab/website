@@ -1,13 +1,13 @@
 ---
 export async function getStaticPaths() {
-  const posts = await Astro.glob('../projects/*.mdx')
+  const projects = await Astro.glob('../projects/*.mdx')
 
-  return posts.map(post => ({
+  return projects.map(project => ({
     params: { 
-      slug: post.frontmatter.slug 
+      slug: project.frontmatter.slug 
     },
     props: {
-      post
+      project
     },
   }))
 }

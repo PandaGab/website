@@ -1,0 +1,43 @@
+---
+const { frontmatter } = Astro.props;
+
+---
+<html>
+  <head>
+    <title>{frontmatter.title}</title>
+    <meta charset="UTF-8">
+    <style lang="styl">
+      body 
+        background-color: rgb(255, 255, 255)
+        margin-top: 5%
+        margin-left: 10%
+        margin-right: 10%
+        margin-bot: 10%
+      
+      h1 
+        color: rgb(0, 0, 0)
+        font-size: xx-large
+        font-family: 'Poppins'
+        margin-bot: 0
+      
+      .date
+        color: rgb(139, 139, 139)
+        padding-bottom: 5rem
+
+      .description 
+        font-size: x-large
+      
+      article
+        :global(h1)
+          font-size: xx-large
+
+        :global(h2) 
+          font-size: x-large
+          color: brown
+    </style>
+  </head>
+    <h1>{frontmatter.title}</h1>
+    <p class="date">{frontmatter.date}</p>
+    <!-- <p class="description">{frontmatter.description}</p> -->
+    <article><slot /></article>
+</html>
