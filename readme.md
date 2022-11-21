@@ -23,4 +23,4 @@ Here are my inspiration :
 - [Starfield Background](https://astro-moon-landing.netlify.app/)
 - [Glowing text](https://trishalim.hashnode.dev/css-tricks-to-create-that-dark-futuristic-web3-look)
 - [Tooltip](https://www.w3schools.com/css/css_tooltip.asp)
-- <https://heroicons.com/>
+- [Hamburger menu](https://alvarotrigo.com/blog/hamburger-menu-css/)

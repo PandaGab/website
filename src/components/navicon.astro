@@ -1,54 +1,80 @@
 ---
 const { size, url } = Astro.props;
 ---
-<style>
-    .dot {
-        display: contents;
-    }
-    .tooltiptext{
-        visibility: hidden;
-        width: 120px;
-        background-color: rgb(0, 0, 0);
-        color: rgb(255, 255, 255);
-        text-align: center;
-        border-radius: 20px;
-        padding: 5px 0;
-        bottom: -5px;
-        margin-left: -50px;
-        border: 2px double transparent;
-        background-image: linear-gradient(rgb(13, 14, 33), rgb(13, 14, 33)), radial-gradient(circle at left top, rgb(1, 110, 218), rgb(217, 0, 192));
-        background-origin: border-box;
-        background-clip: padding-box, border-box;
+<style lang="styl" define:vars={{ size }}>
+  svg
+    width: calc(var(--size) * 1px)
+    height: calc(var(--size) * 1px)
 
-        /* Position the tooltip */
-        position: absolute;
-        z-index: 1;
+  .dot 
+    display: contents
+    &:hover .tooltip-text
+      visibility: visible
+      opacity: 1
 
-        /* Fade in transition */
-        opacity: 0;
-        transition: opacity 0.5s;
-    }
-    .dot:hover .tooltiptext {
-        visibility: visible;
-        opacity: 1;
-    }
-    .tooltiptext:hover { 
-        transition: all 0.3s ease;
+  .tooltip-text
+      visibility: hidden
+      width: 120px
+      background-color: rgb(0, 0, 0)
+      color: rgb(255, 255, 255)
+      text-align: center
+      border-radius: 20px
+      padding: 5px 0
+      bottom: -5px
+      margin-left: -50px
+      border: 2px double transparent
+      background-image: linear-gradient(rgb(13, 14, 33), rgb(13, 14, 33)), radial-gradient(circle at left top, rgb(1, 110, 218), rgb(217, 0, 192))
+      background-origin: border-box
+      background-clip: padding-box, border-box
+      /* Position the tooltip */
+      position: absolute
+      z-index: 1
+      /* Fade in transition */
+      opacity: 0
+      transition: opacity 0.5s
+
+      &:hover
+        transition: all 0.3s ease
         visibility: visible
-        /* box-shadow: rgba(255, 255, 255, 0.525) 0px 0px 20px 0px; */
-    }
 
+  @media (any-hover: none)
+    svg
+      width: calc(var(--size) * 3 * 1px)
+      height: calc(var(--size) * 3 * 1px)
+    
+    .tooltip-text
+      visibility: visible
+      width: 200px
+      background-color: rgb(0, 0, 0)
+      color: rgb(255, 255, 255)
+      text-align: center
+      border-radius: 20px
+      padding: 5px 0
+      bottom: -5px
+      margin-left: -50px
+      border: 2px double transparent
+      background-image: linear-gradient(rgb(13, 14, 33), rgb(13, 14, 33)), radial-gradient(circle at left top, rgb(1, 110, 218), rgb(217, 0, 192))
+      background-origin: border-box
+      background-clip: padding-box, border-box
+      /* Position the tooltip */
+      position: absolute
+      z-index: 1
+      /* Fade in transition */
+      opacity: 1
+      transition: opacity 0.5s
+
+    
 </style>
 <div class="dot">
     <!-- Draw the white dot -->
-    <svg width={size} height={size} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
         <!-- <filter id="gaussianBlur">
             <feGaussianBlur in="SourceGraphic" stdDeviation="5"/>
         </filter> -->
         <circle cx="50" cy="50" r="10" fill="white" /> /* filter="url(#gaussianBlur)" */
     </svg>
     <a href={url}>
-        <span class="tooltiptext">
+        <span class="tooltip-text">
             <slot />
         </span>
     </a>
